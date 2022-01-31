@@ -18,7 +18,6 @@ public class WordleSolver {
             }
 
             System.out.println("It took " + wordleChallenge.getTotalGuesses() + " guesses to get it right");
-
         }
     }
 }
