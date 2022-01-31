@@ -3,7 +3,6 @@ package com.wordlesolver
 data class WorldChallenge @JvmOverloads constructor(
     val correctWord: String,
     val allowedGuesses: Int = 6,
-    var guesses: List<WordleGuess> = mutableListOf(),
 ) {
     var totalGuesses = 0
     var previousGuesses = mutableSetOf<String>()

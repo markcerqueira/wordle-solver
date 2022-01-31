@@ -21,21 +21,17 @@ data class WordleGuessBreakdown(
         for ((index, guessChar) in guessWordList.withIndex()) {
             val correctChar = correctWord.toCharArray()[index]
             if (guessChar == correctChar) {
-                letterResults.set(index, LetterResult.CORRECT)
+                letterResults[index] = LetterResult.CORRECT
                 correctWordList[index] = '0'
             }
         }
 
         for ((index, guessChar) in guessWordList.withIndex()) {
-            if (correctWordList[index] == '0') {
-                continue
-            }
-
             if (correctWordList.contains(guessChar)) {
-                letterResults.set(index, LetterResult.INCORRECT_POSITION)
+                letterResults[index] = LetterResult.INCORRECT_POSITION
                 correctWordList[correctWord.indexOf(guessChar)] = '0'
-            } else {
-                letterResults.set(index, LetterResult.INCORRECT_NEVER_PRESENT)
+            } else if (correctWordList[index] != '0') {
+                letterResults[index] = LetterResult.INCORRECT_NEVER_PRESENT
             }
         }
     }
