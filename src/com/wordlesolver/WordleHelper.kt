@@ -7,7 +7,7 @@ import kotlin.random.Random
 
 class WordleHelper {
     val allEnglishWords: List<String> = Files.readAllLines(File("resources/all-english-words.txt").toPath(), Charset.defaultCharset())
-    val allFiveLetterEnglishWords: List<String> = allEnglishWords.filter { it.length == 5 }
+    val allFiveLetterEnglishWords: List<String> = allEnglishWords.filter { it.length == 5 && it.none { it in 'A'..'Z' } }
 
     fun randomWordle(): String {
         return allFiveLetterEnglishWords[Random.nextInt(allFiveLetterEnglishWords.size)]
