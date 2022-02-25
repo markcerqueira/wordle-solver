@@ -19,7 +19,7 @@ data class WorldChallenge @JvmOverloads constructor(
     fun guess(guessWord: String): WordleGuessResult {
         // println("Guessing the word is $guessWord")
 
-        if (!wordleHelper.allFiveLetterEnglishWords.contains(guessWord)) {
+        if (!wordleHelper.allWordleWords.contains(guessWord)) {
             // println("\tReturning NOT_A_WORD as $guessWord is not a valid word")
             return WordleGuessResult(WordleGuessResultSummary.NOT_A_WORD)
         }

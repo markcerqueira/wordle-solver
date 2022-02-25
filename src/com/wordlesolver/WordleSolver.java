@@ -3,21 +3,16 @@ package com.wordlesolver;
 public class WordleSolver {
 
     public static void main(String[] args) throws Exception {
-        WordleHelper wordleHelper = new WordleHelper();
-
-        System.out.println("Total words in our dictionary = " + wordleHelper.getAllEnglishWords().size());
-        System.out.println("Total five-letter words in our dictionary = " + wordleHelper.getAllFiveLetterEnglishWords().size() + "\n");
-
         for (int i = 0; i < 1; i++) {
-            WorldChallenge wordleChallenge = new WorldChallenge(wordleHelper.randomWordle());
+            WorldChallenge wordleChallenge = new WorldChallenge("shack");
 
-            String guessWord = wordleHelper.randomWordle();
+            System.out.println("S H D A E");
 
-            while (wordleChallenge.guess(wordleHelper.randomWordle()).getSummary() != WordleGuessResultSummary.CORRECT) {
+            WordleGuessResult wordleGuessResult = wordleChallenge.guess("shade");
+            System.out.println("S H A A A");
+            System.out.println(wordleGuessResult.getWordleGuessBreakdown());
 
-            }
-
-            System.out.println("It took " + wordleChallenge.getTotalGuesses() + " guesses to get it right");
+            // System.out.println("It took " + wordleChallenge.getTotalGuesses() + " guesses to get it right");
         }
     }
 }

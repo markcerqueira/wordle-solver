@@ -25,7 +25,7 @@ class WordleGuessBreakdownTest {
         assertEquals(wordleGuessBreakdown("shade", "shack").toString(), "🟩 🟩 🟩 ⬛️ ⬛️")
     }
 
-    fun wordleGuessBreakdown(correctWord: String, guessWord: String): WordleGuessBreakdown {
+    private fun wordleGuessBreakdown(correctWord: String, guessWord: String): WordleGuessBreakdown {
         return WordleGuessBreakdown(correctWord, guessWord)
     }
 }
